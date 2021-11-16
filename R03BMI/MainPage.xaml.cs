@@ -18,7 +18,24 @@ namespace R03BMI
 
         private void Button_Clicked(object sender, EventArgs e)
         {
+            var height = heighit.Text;
+            var weight = weighit.Text;
+            try
+            {
+                double h = double.Parse(height);
+                if (h > 10)
+                {
+                    h = h / 100;
+                    result.Text = h + "";
+                }
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex);
+                result.Text = "!!!";
 
+
+            }
         }
     }
 }
