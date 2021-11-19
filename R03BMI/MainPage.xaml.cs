@@ -28,6 +28,12 @@ namespace R03BMI
                     h = h / 100;
                     result.Text = h + "";
                 }
+ doubleW= double.Parse(weight);
+                if (w > 10)
+                {
+                    w = w / 100;
+                    result.Text = h + "";
+                }
             }
             catch (FormatException ex)
             {
