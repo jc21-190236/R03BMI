@@ -28,11 +28,11 @@ namespace R03BMI
                     h = h / 100;
                     result.Text = h + "";
                 }
- doubleW= double.Parse(weight);
+                double W= double.Parse(weight);
                 if (w > 10)
                 {
                     w = w / 100;
-                    result.Text = h + "";
+                    result.Text = w + "";
                 }
             }
             catch (FormatException ex)
@@ -40,7 +40,7 @@ namespace R03BMI
                 Console.WriteLine(ex);
                 result.Text = "!!!";
 
-
+                
             }
         }
     }
