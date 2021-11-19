@@ -28,12 +28,17 @@ namespace R03BMI
                     h = h / 100;
                     result.Text = h + "";
                 }
-                double W= double.Parse(weight);
-                if (w > 10)
+
+                double w = double.Parse(weight);
+                if (h > 10)
                 {
                     w = w / 100;
                     result.Text = w + "";
                 }
+
+
+
+                BMI = (weight / (height * height));
             }
             catch (FormatException ex)
             {
