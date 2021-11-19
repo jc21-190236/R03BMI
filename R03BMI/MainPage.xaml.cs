@@ -41,6 +41,7 @@ namespace R03BMI
                 BMI = (weight / (height * height));
             }
             catch (FormatException ex)
+            
             {
                 Console.WriteLine(ex);
                 result.Text = "!!!";
