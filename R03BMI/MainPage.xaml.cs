@@ -18,27 +18,67 @@ namespace R03BMI
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            var height = heighit.Text;
-            var weight = weighit.Text;
             try
             {
-                double h = double.Parse(height);
-                if (h > 10)
+                double height = double.Parse(heighit.Text);
+                double weight = double.Parse(weighit.Text);
+                string sin = "m";
+                string tai = "kg";
+                int flag1 = 0;
+                int flag2 = 0;
+                if (height > 10)
                 {
-                    h = h / 100;
-                    result.Text = h + "";
+                    height = height / 100;
+
+                    flag1 = 1;
+                    sin = "cm";
+                    
+                }
+                if (weight > 1000)
+                {
+                    weight = weight / 1000;
+                    flag2 = 1;
+                    tai = "g";
+                    
+                }
+                double BMI = (weight / (height * height));
+                string j;
+                if (BMI < 18.5)
+                {
+                    j = "低体重";
+                }
+                else if (BMI < 25)
+                {
+                    j = "普通体重";
+                }
+                else if (BMI<30)
+                {
+                    j = "肥満(1度)";
+                }
+                else if (BMI < 35)
+                {
+                    j = "肥満(2度)";
+                }
+                else if (BMI < 40)
+                {
+                    j = "肥満(3度)";
+                }
+                else 
+                {
+                    j = "肥満(4度)";
+                }
+                if(flag1>0)
+                {
+                    height = height* 100;
+                }
+                if(flag2>0)
+                {
+                    weight = weight * 1000;
                 }
 
-                double w = double.Parse(weight);
-                if (h > 10)
-                {
-                    w = w / 100;
-                    result.Text = w + "";
-                }
 
-
-
-                BMI = (weight / (height * height));
+                //身長1.6m　体重４６ｋｇのＢＭＩは？？？肥満１です。
+                result.Text ="身長"+height+sin+"体重"+weight+tai+"のBMIは"+BMI+j+"です";
             }
             catch (FormatException ex)
             
