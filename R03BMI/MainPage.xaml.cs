@@ -41,7 +41,8 @@ namespace R03BMI
                     tai = "g";
                     
                 }
-                double BMI = (weight / (height * height));
+                double BMI = Math.Round(weight / (height * height),1);
+
                 string j;
                 if (BMI < 18.5)
                 {
